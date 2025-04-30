@@ -15,7 +15,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Processing proc = new Processing();
-        String choice = "";
+        String choice;
         boolean isEnd = false;
 
         proc.feelList();
@@ -23,27 +23,28 @@ public class Main {
             System.out.println("\nВыберите пункт меню: ");
             System.out.println("[1] Определить самый урожайный год для каждого сорта");
             System.out.println("[2] Определить массу самого крупного пакета для каждого сорта");
-            System.out.println("[3] Найти сорта собранные в 2018 году");
+            System.out.println("[3] Найти сорта собранные в указанном году");
             System.out.println("[Любой иной символ] Выход");
 
             choice = sc.nextLine();
             switch (choice) {
-                case "1":
-                    proc.getMostProductiveYear();
-                    break;
-                case "2":
-                    proc.getHeaviestPackages();
-                    break;
-                case "3":
-                    Set<String> sortsSet = proc.getSortsFrom2018Year();
-                    System.out.println("Сорта чая, собранные в 2018г: ");
-                    for (String sort : sortsSet) {
-                        System.out.println(sort);
+                case "1" -> proc.getMostProductiveYear();
+                case "2" -> proc.getHeaviestPackages();
+                case "3" -> {
+                    System.out.println("Выберите год");
+                    try {
+                        int year = sc.nextInt();
+                        sc.nextLine();
+                        Set<String> sortsSet = proc.getSortsFromSetYear(year);
+                        System.out.printf("Сорта чая, собранные в %d году: ", year);
+                        for (String sort : sortsSet) {
+                            System.out.println(sort);
+                        }
+                    } catch (InputMismatchException e) {
+                        System.out.println("Ошибка ввода");
                     }
-                    break;
-                default:
-                    isEnd = true;
-                    break;
+                }
+                default -> isEnd = true;
             }
         }
     }
