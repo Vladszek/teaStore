@@ -7,7 +7,7 @@ import java.util.*;
 public class Processing {
     private static final int PACKAGE_NUM = 10000;
     private static final int MIN_YEAR = 2010;
-    private static final int MAX_YEAR = 2023;
+    private static final int MAX_YEAR = 2025;
     private static final double MIN_WEIGHT = 10;
     private static final double MAX_WEIGHT = 20;
     private static final String[] teaSorts = new String[]{"Keemun", "Huangshan Maofeng", "Lu'an Quapian", "Tai Ping Hou Kui"};
@@ -51,10 +51,10 @@ public class Processing {
         return mostProductiveYear;
     }
 
-    public Set<String> getSortsFrom2018Year() {
+    public Set<String> getSortsFromSetYear(int year) {
         Set<String> sorts = new HashSet<>();
         for (TeaPackage tp : teaPackages) {
-            if (tp.getHarvestYear() == 2018) {
+            if (tp.getHarvestYear() == year) {
                 sorts.add(tp.getSort());
             }
         }
