@@ -10,8 +10,12 @@
 import service.Processing;
 
 import java.util.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Main {
+    private static final Logger logger = LoggerFactory.getLogger(Main.class);
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Processing proc = new Processing();
@@ -27,6 +31,7 @@ public class Main {
             System.out.println("[Любой иной символ] Выход");
 
             choice = sc.nextLine();
+            logger.info("Выбран пункт меню: {}", choice);
             switch (choice) {
                 case "1" -> proc.getMostProductiveYear();
                 case "2" -> proc.getHeaviestPackages();
@@ -35,6 +40,7 @@ public class Main {
                     try {
                         int year = sc.nextInt();
                         sc.nextLine();
+                        logger.info("Выбран год урожая: {}", year);
                         Set<String> sortsSet = proc.getSortsFromSetYear(year);
                         System.out.printf("Сорта чая, собранные в %d году: ", year);
                         for (String sort : sortsSet) {
@@ -42,6 +48,7 @@ public class Main {
                         }
                     } catch (InputMismatchException e) {
                         System.out.println("Ошибка ввода");
+                        logger.warn("Неверно указан год");
                     }
                 }
                 default -> isEnd = true;
