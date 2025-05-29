@@ -51,11 +51,11 @@ public class Processing {
         return mostProductiveYear;
     }
 
-    public Set<String> getSortsFromSetYear(int year) {
-        Set<String> sorts = new HashSet<>();
+    public Map<String, Double> getSortsFromSetYear(int year) {
+        Map<String, Double> sorts = new HashMap<>();
         for (TeaPackage tp : teaPackages) {
-            if (tp.getHarvestYear() == year) {
-                sorts.add(tp.getSort());
+            if(tp.getHarvestYear() == year) {
+                sorts.merge(tp.getSort(), tp.getMas(), Double::sum);
             }
         }
         return sorts;
@@ -78,22 +78,22 @@ public class Processing {
         }
     }
 
-    public void getHeaviestPackages() {
+    public Map<String, Double> getHeaviestPackages() {
+        Map<String, Double> sortsWithMass = new HashMap<>();
         for (String name : teaSorts) {
             double maxMas = getHeaviestPackageOfCurrentSort(name);
-            System.out.println("Сорт: " + name);
-            System.out.printf("Самая большая масса пакета:%,9.4f\n", maxMas);
-            System.out.println("---");
+            sortsWithMass.put(name, maxMas);
         }
+        return sortsWithMass;
     }
 
-    public void getMostProductiveYear() {
+    public Map<String, Integer> getMostProductiveYear() {
+        Map<String, Integer> sortsWithYear = new HashMap<>();
         for (String name : teaSorts) {
             int mostProductiveYear = getMostProductiveYearByCurrentSort(name);
-            System.out.println("Сорт: " + name);
-            System.out.println("Самый урожайный год: " + mostProductiveYear);
-            System.out.println("---");
+            sortsWithYear.put(name, mostProductiveYear);
         }
+        return sortsWithYear;
     }
 
 }
