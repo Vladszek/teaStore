@@ -64,7 +64,8 @@ public class Processing {
     private double getHeaviestPackageOfCurrentSort(String sortName) {
         double maxMas = 0;
         for (TeaPackage tp : teaPackages) {
-            if (sortName.equals(tp.getSort()) && tp.getMas() > maxMas) {
+            if (sortName.equals(tp.getSort())
+                    && tp.getMas() > maxMas) {
                 maxMas = tp.getMas();
             }
         }
