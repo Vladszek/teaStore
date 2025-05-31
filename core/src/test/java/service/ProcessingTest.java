@@ -19,7 +19,7 @@ public class ProcessingTest {
         processing = new Processing();
         List<TeaPackage> mockList = Arrays.asList(
                 new TeaPackage("Keemun", 2022, 10.0),
-                new TeaPackage("Huangshan Maofeng", 2020, 12.5),
+                new TeaPackage("Huangshan Maofeng", 2020, 18.5),
                 new TeaPackage("Huangshan Maofeng", 2019, 15.5),
                 new TeaPackage("Lu'an Quapian", 2022, 10.0),
                 new TeaPackage("Keemun", 2022, 16.0)

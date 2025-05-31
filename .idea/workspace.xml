@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea19b082-6ade-49c9-b909-a4089c9df7f7" name="Changes" comment="Переписан плагин Jacoco">
+    <list default="true" id="ea19b082-6ade-49c9-b909-a4089c9df7f7" name="Changes" comment="Изменен getHeaviestPackageOfCurrentSort">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/service/ProcessingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/service/ProcessingTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1748621756132</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Изменен getHeaviestPackageOfCurrentSort">
+      <created>1748678938114</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1748678938114</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -212,7 +220,8 @@
     <MESSAGE value="Добавлен Checkstyle в pom.xml" />
     <MESSAGE value="Натсроена конфигурация для Checkstyle в pom.xml" />
     <MESSAGE value="Переписан плагин Jacoco" />
-    <option name="LAST_COMMIT_MESSAGE" value="Переписан плагин Jacoco" />
+    <MESSAGE value="Изменен getHeaviestPackageOfCurrentSort" />
+    <option name="LAST_COMMIT_MESSAGE" value="Изменен getHeaviestPackageOfCurrentSort" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/teaStore$Main.ic" NAME="Main Coverage Results" MODIFIED="1748524551986" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
