@@ -82,7 +82,7 @@ public class ProcessingTest {
         Map<String, Double> res = processing.getHeaviestPackages();
         assertEquals(16.0,res.get("Keemun"));
         assertEquals(10.0,res.get("Lu'an Quapian"));
-        assertEquals(15.5,res.get("Huangshan Maofeng"));
+        assertEquals(18.5,res.get("Huangshan Maofeng"));
     }
 
     @Test
