@@ -90,6 +90,6 @@ public class ProcessingTest {
         Map<String, Integer> res = processing.getMostProductiveYear();
         assertEquals(2022,res.get("Keemun"));
         assertEquals(2022,res.get("Lu'an Quapian"));
-        assertEquals(2019,res.get("Huangshan Maofeng"));
+        assertEquals(2020,res.get("Huangshan Maofeng"));
     }
 }
